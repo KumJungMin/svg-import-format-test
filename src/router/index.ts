@@ -1,7 +1,9 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import Home from "../views/HomePage.vue";
-import About from "../views/AboutPage.vue";
+import { defineAsyncComponent } from "vue";
+
+const Home = defineAsyncComponent(() => import("../views/HomePage.vue"));
+const About = defineAsyncComponent(() => import("../views/AboutPage.vue"));
 
 const routes = [
   { path: "/", redirect: "/home" },

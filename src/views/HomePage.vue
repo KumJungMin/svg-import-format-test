@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import File39 from "../assets/file-39.png";
-import File40 from "../assets/file-40.png";
+const files = Array.from(
+  { length: 3 },
+  (_, i) => new URL(`../assets/file-${i + 30}.png`, import.meta.url).href,
+);
 </script>
 
 <template>
   <h1>Home Page</h1>
-  <img :src="File39" alt="file-39" />
-  <img :src="File40" alt="file-40" />
+  <ul>
+    <li v-for="file in files" :key="file">
+      <img :src="file" alt="file" />
+    </li>
+  </ul>
 </template>

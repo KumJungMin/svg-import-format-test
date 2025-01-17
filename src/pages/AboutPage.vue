@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const files = Array.from(
-  { length: 10 },
-  (_, i) => new URL(`../assets/file-${i + 1}.png`, import.meta.url).href,
+  { length: 3 },
+  (_, i) => new URL(`../assets/file-about-${i + 1}.png`, import.meta.url).href,
 );
 </script>
 

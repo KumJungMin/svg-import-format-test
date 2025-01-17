@@ -2,8 +2,12 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import { defineAsyncComponent } from "vue";
 
-const Home = defineAsyncComponent(() => import("../views/HomePage.vue"));
-const About = defineAsyncComponent(() => import("../views/AboutPage.vue"));
+const Home = defineAsyncComponent(
+  () => import(/* webpackChunkName: "HomePage" */ "../pages/HomePage.vue"),
+);
+const About = defineAsyncComponent(
+  () => import(/* webpackChunkName: "AboutPage" */ "../pages/AboutPage.vue"),
+);
 
 const routes = [
   { path: "/", redirect: "/home" },
